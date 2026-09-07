@@ -177,14 +177,11 @@ h2.osc-jackpot-tracker__title {
 .osc-jackpot-tracker__hero-grid {
   display: flex;
   gap: 16px;
-  overflow-x: auto;
-  padding-bottom: 8px;
-  scroll-snap-type: x mandatory;
 }
 
 .osc-jt-card {
   position: relative;
-  background: #fff;
+  background: #FFF1D6;
   border: 1px solid #E5E7EB;
   box-shadow: 0 8px 32px rgba(0, 0, 0, .15);
   border-radius: 16px;
@@ -192,8 +189,27 @@ h2.osc-jackpot-tracker__title {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  flex: 0 0 280px;
-  scroll-snap-align: start;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Below this, the real site's own .container drops its max-width tier from
+   720px to 540px (Bootstrap's 768px breakpoint) -- confirmed empirically
+   that's exactly where 3 equal-width cards stop having room for the CTA +
+   casino chip row and start overflowing (219px card: fine; 159px card,
+   i.e. the 540px tier: CTA row and stats both overflow). Revert to the
+   original fixed-width horizontal-scroll carousel from there down through
+   the actual mobile breakpoint. */
+@media (max-width: 767.98px) {
+  .osc-jackpot-tracker__hero-grid {
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+  }
+  .osc-jt-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+  }
 }
 
 .osc-jt-card__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
@@ -716,7 +732,7 @@ h2.osc-jackpot-tracker__title {
 
 	</header>
 
-<section class="osc-jackpot-tracker osc-jackpot-tracker--dark" aria-label="Live Jackpot Tracker">
+<section class="osc-jackpot-tracker" aria-label="Live Jackpot Tracker">
   <div class="osc-jackpot-tracker__header">
     <h2 class="osc-jackpot-tracker__title">
       <span class="osc-jackpot-tracker__live-dot" aria-hidden="true"></span>
@@ -1406,7 +1422,7 @@ window.BookiesListsObj = window.BookiesListsObj || {ajax_url: "https://www.onlin
     { id: 1, featured: true, game: "Mega Moolah", provider: "Games Global", amount: 8660000, fmt: "M2", avgWin: "€7M", avgFreq: "k. A.", lastHit: "vor 45 Tagen", status: "overdue", casino: "Lucky Wins", casinoLogo: "https://www.onlinespielcasino.de/app/uploads/Lucky_wins-logo-0E121A-1.svg", casinoBg: "#0E121A" },
     { id: 2, featured: true, game: "WowPot", provider: "Microgaming", amount: 14000000, fmt: "M+", avgWin: "€8,5M", avgFreq: "k. A.", lastHit: "vor ~7 Monaten", status: "extreme", casino: "Rocket Spin", casinoLogo: "https://www.onlinespielcasino.de/app/uploads/RocketSpin-logo-2C2B2B.svg", casinoBg: "#2C2B2B" },
     { id: 3, featured: true, game: "Mega Fortune", provider: "NetEnt", amount: 101817, fmt: "full", avgWin: "€3,5M", avgFreq: "k. A.", lastHit: "vor 12 Tagen", status: "cold", casino: "Lucky Wins", casinoLogo: "https://www.onlinespielcasino.de/app/uploads/Lucky_wins-logo-0E121A-1.svg", casinoBg: "#0E121A" },
-    { id: 4, featured: true, game: "Hall of Gods", provider: "NetEnt", amount: 1200000, fmt: "M~", avgWin: "€5,5M", avgFreq: "k. A.", lastHit: "k. A.", status: "cold", casino: "Koru Casino", casinoLogo: "https://www.onlinespielcasino.de/app/uploads/KoruCasino-logo-EDF0F9.svg", casinoBg: "#EDF0F9" },
+    { id: 4, game: "Hall of Gods", provider: "NetEnt", amount: 1200000, fmt: "M~", avgWin: "€5,5M", avgFreq: "k. A.", lastHit: "k. A.", status: "cold", casino: "Koru Casino", casinoLogo: "https://www.onlinespielcasino.de/app/uploads/KoruCasino-logo-EDF0F9.svg", casinoBg: "#EDF0F9" },
     { id: 5, game: "Dream Drop", provider: "Relax Gaming", amount: 2500000, fmt: "M1", avgWin: "€1,5M", avgFreq: "k. A.", lastHit: "vor 8 Tagen", status: "warm", casino: "Wonaco", casinoLogo: "../assets/logos/wonaco.svg", casinoBg: "#0A1683" },
     { id: 6, game: "Tropical Pop", provider: "Pragmatic Play", amount: 365300, fmt: "full", avgWin: "k. A.*", avgFreq: "k. A.", lastHit: "k. A.*", status: "warm", casino: "Wonaco", casinoLogo: "../assets/logos/wonaco.svg", casinoBg: "#0A1683" },
     { id: 7, game: "Tycoons Plus", provider: "Betsoft", amount: 462000, fmt: "full", avgWin: "k. A.*", avgFreq: "k. A.", lastHit: "k. A.*", status: "warm", casino: "Rocket Spin", casinoLogo: "https://www.onlinespielcasino.de/app/uploads/RocketSpin-logo-2C2B2B.svg", casinoBg: "#2C2B2B" },
