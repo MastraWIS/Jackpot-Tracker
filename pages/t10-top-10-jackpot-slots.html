@@ -141,7 +141,7 @@
 .t10-jackpot-tracker {
   --jt-text-muted: #6B7280;
   background: transparent;
-  padding: 32px 0 8px;
+  padding: 0;
   color: #212529;
   font-family: "Open Sans", Gudea, sans-serif;
 }
@@ -298,7 +298,7 @@ h2.t10-jackpot-tracker__title {
 }
 
 /* ---- Jackpot Slots Radar table (companion to the hero carousel, same DATA) ---- */
-.t10-jackpot-tracker__table-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin: 28px 0 12px; }
+.t10-jackpot-tracker__table-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin: 8px 0 12px; }
 
 .t10-jt-search {
   background: #fff; border: 1px solid #D1D5DB; border-radius: 8px;
@@ -897,7 +897,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <span class="t10-jackpot-tracker__updated">Updated <span id="t10TrackerUpdated">moments ago</span></span>
 </div>
 <div class="t10-jackpot-tracker__hero-grid" id="t10TrackerCarousel"></div>
-<h3 style="font-family: Inter, 'Titillium Web', sans-serif; font-weight: 600; font-size: 18px; color: #232323; margin: 8px 0 0;">Jackpot Slots Radar</h3>
+<h3 style="font-family: Inter, 'Titillium Web', sans-serif; font-weight: 600; font-size: 18px; color: #232323; margin: 24px 0 0;">Jackpot Slots Radar</h3>
 <div class="t10-jackpot-tracker__table-controls">
 <input class="t10-jt-search" id="t10TrackerSearch" placeholder="Search by game or casino..." type="text"/>
 </div>
@@ -1640,11 +1640,11 @@ window.addEventListener("load", function () {
   // was deferred past that init.
   const DATA = [
     { id: 1, game: "Mega Moolah", provider: "Microgaming", amount: 4218650, fmt: "M2", avgWin: "$3.1M", avgFreq: "~90 days", lastHit: "52 days ago", status: "overdue", casino: "7Bit Casino", casinoLogo: "../assets/t10/img/7Bit-Casino.png", casinoUrl: "https://www.top10-casinosites.net/reviews/7bit/", casinoBg: "#0A0C15"  },
-    { id: 2, game: "WowPot", provider: "Microgaming", amount: 12480000, fmt: "M+", avgWin: "$9.4M", avgFreq: "n/a", lastHit: "8 months ago", status: "extreme", casino: "BC.Game", casinoLogo: "../assets/t10/img/BC.GAME-logo-292D2E.png", casinoUrl: "https://www.top10-casinosites.net/reviews/bc-game/", casinoBg: "transparent"  },
+    { id: 2, game: "WowPot", provider: "Microgaming", amount: 12480000, fmt: "M+", avgWin: "$9.4M", avgFreq: "n/a", lastHit: "8 months ago", status: "extreme", casino: "BC.Game", casinoLogo: "../assets/t10/img/BC.GAME-logo-292D2E.png", casinoUrl: "https://www.top10-casinosites.net/reviews/bc-game/", casinoBg: "#292D2E"  },
     { id: 3, game: "Mega Fortune", provider: "NetEnt", amount: 187450, fmt: "full", avgWin: "$3.3M", avgFreq: "n/a", lastHit: "14 days ago", status: "cold", casino: "7Bit Casino", casinoLogo: "../assets/t10/img/7Bit-Casino.png", casinoUrl: "https://www.top10-casinosites.net/reviews/7bit/", casinoBg: "#0A0C15"  },
-    { id: 4, game: "Jackpot Giant", provider: "Playtech", amount: 2150300, fmt: "M2", avgWin: "$1.8M", avgFreq: "n/a", lastHit: "6 days ago", status: "warm", casino: "BC.Game", casinoLogo: "../assets/t10/img/BC.GAME-logo-292D2E.png", casinoUrl: "https://www.top10-casinosites.net/reviews/bc-game/", casinoBg: "transparent"  },
+    { id: 4, game: "Jackpot Giant", provider: "Playtech", amount: 2150300, fmt: "M2", avgWin: "$1.8M", avgFreq: "n/a", lastHit: "6 days ago", status: "warm", casino: "BC.Game", casinoLogo: "../assets/t10/img/BC.GAME-logo-292D2E.png", casinoUrl: "https://www.top10-casinosites.net/reviews/bc-game/", casinoBg: "#292D2E"  },
     { id: 5, game: "Divine Fortune", provider: "NetEnt", amount: 342900, fmt: "full", avgWin: "$450K", avgFreq: "n/a", lastHit: "3 days ago", status: "cold", casino: "7Bit Casino", casinoLogo: "../assets/t10/img/7Bit-Casino.png", casinoUrl: "https://www.top10-casinosites.net/reviews/7bit/", casinoBg: "#0A0C15"  },
-    { id: 6, game: "Hall of Gods", provider: "NetEnt", amount: 1050000, fmt: "M2", avgWin: "$1.1M", avgFreq: "n/a", lastHit: "1 day ago", status: "warm", casino: "BC.Game", casinoLogo: "../assets/t10/img/BC.GAME-logo-292D2E.png", casinoUrl: "https://www.top10-casinosites.net/reviews/bc-game/", casinoBg: "transparent"  },
+    { id: 6, game: "Hall of Gods", provider: "NetEnt", amount: 1050000, fmt: "M2", avgWin: "$1.1M", avgFreq: "n/a", lastHit: "1 day ago", status: "warm", casino: "BC.Game", casinoLogo: "../assets/t10/img/BC.GAME-logo-292D2E.png", casinoUrl: "https://www.top10-casinosites.net/reviews/bc-game/", casinoBg: "#292D2E"  },
   ];
 
   const STATUS_LABEL = { overdue: "Overdue", extreme: "Extremely Overdue", cold: "Cold", warm: "Warm" };
