@@ -308,6 +308,13 @@ h2.t10-jackpot-tracker__title {
 .t10-jt-search:focus { outline: 2px solid #0965ED; outline-offset: 1px; }
 
 .t10-jackpot-tracker__table-wrap { overflow-x: auto; border: 1px solid #E5E7EB; border-radius: 16px; }
+/* The site's own default.min.js auto-wraps every <table> in the article body
+   with its own inline-styled div (padding:8px; margin-bottom:20px; among
+   other things) -- a responsive-table behavior baked into the real theme,
+   not something authored here. Inline styles beat a class selector, so this
+   has to win on specificity via !important against the anonymous wrapper it
+   inserts as the table-wrap's only child. */
+.t10-jackpot-tracker__table-wrap > div { padding: 0 !important; margin-bottom: 0 !important; }
 
 .t10-jt-table { width: 100%; border-collapse: collapse; min-width: 620px; font-size: 14px; }
 .t10-jt-table th {
