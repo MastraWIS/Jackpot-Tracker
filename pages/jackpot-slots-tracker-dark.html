@@ -135,7 +135,7 @@
 .osc-jackpot-tracker {
   --jt-text-muted: #6B7280;
   background: transparent;
-  padding: 40px 0 8px;
+  padding: 0 0 36px;
   color: #212529;
 }
 
@@ -153,8 +153,15 @@ h2.osc-jackpot-tracker__title {
   align-items: center;
   gap: 10px;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 26px;
   margin: 0;
+}
+
+/* Secondary to the tracker title above -- inverts the page's default h2 size
+   (26px) since this heading needs to read as the tracker's second-tier
+   sub-heading, not another main section title. */
+h2.osc-jt-radar-heading {
+  font-size: 22px;
 }
 
 .osc-jackpot-tracker__live-dot {
@@ -748,7 +755,7 @@ h2.osc-jackpot-tracker__title {
 </section>
 
 <div class="wis-content-body">
-<h2 class="wp-block-heading">Jackpot Slots Radar im August 2026</h2>
+<h2 class="wp-block-heading osc-jt-radar-heading">Jackpot Slots Radar im August 2026</h2>
 <div class="osc-jackpot-tracker__table-controls">
   <input type="search" id="oscTrackerSearch" class="osc-jt-search" placeholder="Jackpot oder Casino suchen…" />
 </div>
